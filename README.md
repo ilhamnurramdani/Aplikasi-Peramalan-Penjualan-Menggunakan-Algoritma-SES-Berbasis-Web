@@ -1,8 +1,7 @@
 # Aplikasi-Peramalan-Penjualan-Menggunakan-Algoritma-SES-Berbasis-Web
 
 ## 📌 Judul Proyek
-Sales Forecasting Web App using Single Exponential Smoothing (SES)
-(Aplikasi Peramalan Penjualan Menggunakan Algoritma SES Berbasis Web)
+Aplikasi Peramalan Penjualan Menggunakan Algoritma SES Berbasis Web
 
 ## 📖 Deskripsi Singkat
 Proyek ini merupakan aplikasi berbasis web untuk memprediksi penjualan menggunakan algoritma Single Exponential Smoothing (SES). Sistem ini mengambil data historis penjualan, melakukan proses peramalan, dan menampilkan hasil prediksi secara visual kepada pengguna.
