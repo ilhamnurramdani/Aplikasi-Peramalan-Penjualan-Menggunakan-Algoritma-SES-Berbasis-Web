@@ -9,12 +9,12 @@ Proyek ini merupakan aplikasi berbasis web untuk memprediksi penjualan menggunak
 Proyek ini menggabungkan konsep data science, analisis time series, dan web development, serta bertujuan untuk membantu pelaku usaha dalam pengambilan keputusan berbasis data.
 
 ## 🎯 Fitur Utama : 
-📝Login dan Manajemen Pengguna
-📈 Upload data penjualan (Excel)
-⚙️ Peramalan menggunakan algoritma Single Exponential Smoothing
-📊 Visualisasi data historis dan hasil prediksi (Matplotlib)
-🌐 Antarmuka web interaktif (Flask)
-📤 Ekspor hasil prediksi ke file
+- Login dan Manajemen Pengguna
+- Upload data penjualan (Excel)
+- Peramalan menggunakan algoritma Single Exponential Smoothing
+- Visualisasi data historis dan hasil prediksi (Matplotlib)
+- Antarmuka web interaktif (Flask)
+- Ekspor hasil prediksi ke file
 
 ## 🛠 Teknologi
 
