@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <title>SES Forecasting</title>
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        <div>
+                <h1>List Data Produk</h1>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages%}
+                            <div class="flash-message {{category}}">
+                                <button class=close-btn onclick="this.parentElement.style.display='none'">X</button>
+                                {{message}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <button class="tambah_produk"><a href="/tambah_produk" >Tambah Produk</a></button>
+                <table>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Aksi</th>
+                    </tr>
+                    {% for produk in products %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{produk[1]}}</td>
+                        <td class="aksi">
+                            <a href="/edit_produk/{{produk[0]}}">Edit</a> |
+                            <a href="/hapus_produk/{{produk[0]}}">Hapus</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    
+                </table>
+        </div>
+    </body>
+</html>

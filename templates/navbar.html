@@ -1,0 +1,23 @@
+<nav class='navbar'>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/upload">Upload Dataset</a></li>
+        <li><a href="/produk">Produk</a></li>
+        <li><a href="/penjualan">Penjualan</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Peramalan</a>
+            <ul class="dropdown-content">
+                <li><a href="/peramalan_penjualan">Peramalan Penjualan</a></li>
+                <li><a href="/peramalan_produk">Peramalan Produk</a></li>
+            </ul>
+        </li>
+        <li><a href="/tambah_laporan">Laporan</a></li>
+        {% if hak_akses == 'admin' %}
+            <li><a href="/users">Users</a></li>
+        {% endif %}
+        
+        <button class="logout">
+            <a href="/logout">Logout</a>
+        </button>
+    </ul>
+</nav>

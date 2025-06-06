@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <title>SES Forecasting</title>
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        <div>
+            <h1>Peramalan</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages%}
+                            <div class="flash-message {{category}}">
+                                <button class=close-btn onclick="this.parentElement.style.display='none'">X</button>
+                                {{message}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <button class="tambah_peramalan"><a href="/tambah_peramalan_penjualan" >Tambah Peramalan</a></button>
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Alpha</th>
+                    <th>Bulan</th>
+                    <th>Tahun</th>
+                    <th>Peramalan Selanjutnya</th>
+                    <th>Tanggal Peramalan</th>
+                    <th>error(mape)</th>
+                    <th>Aksi</th>
+                </tr>
+                {% for peramalan in peramalans %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{peramalan[1]}}</td>
+                    <td>{{peramalan[2]}}</td>
+                    <td>{{peramalan[3]}}</td>
+                    <td>{{peramalan[4]}}</td>
+                    <td>{{peramalan[5]}}</td>
+                    <td>{{peramalan[6]}}%</td>
+                    <td>
+                        <a href="/hapus_peramalan_penjualan/{{peramalan[0]}}">hapus</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        <div>
+    </body>
+</html>

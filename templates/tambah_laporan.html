@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Data Produk</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div>
+        <h1>Laporan</h1>
+        <button class="kembali"><a href="/penjualan" >Kembali</a></button>
+        <form method="POST" action="/laporan_pdf" target="_blank">
+            <label for="bulan">Pilih Bulan:</label>
+            <select name="bulan" id="bulan" required>
+                <option value="januari">Januari</option>
+                <option value="februari">Februari</option>
+                <option value="maret">Maret</option>
+                <option value="april">April</option>
+                <option value="mei">Mei</option>
+                <option value="juni">Juni</option>
+                <option value="juli">Juli</option>
+                <option value="agustus">Agustus</option>
+                <option value="september">September</option>
+                <option value="oktober">Oktober</option>
+                <option value="november">November</option>
+                <option value="desember">Desember</option>
+            </select>
+            
+            <label for="tahun">Pilih Tahun:</label>
+            <input type="number" name="tahun" id="tahun" min="2000" max="2100" required>
+            
+            <button type="submit">Generate PDF</button>
+        </form>
+        
+    </div>
+</body>
+</html>

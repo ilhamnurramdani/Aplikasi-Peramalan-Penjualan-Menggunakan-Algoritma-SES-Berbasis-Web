@@ -1,0 +1,26 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>SES Forecasting</title>
+    </head>
+    <body>
+        <div>
+            {% include "navbar.html" %}
+
+            <h1>Edit User</h1>
+            <form method="POST" action="/edit_user/{{user[0]}}" >
+                <input type="text" name="username" value="{{ user[1] }}" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password (Kosongkan jika tidak ingin mengubah)">
+                <select name="hak_akses" required>
+                    <option value="admin" {% if user[2] == 'admin' %}selected{% endif %}>Admin</option>
+                    <option value="pegawai" {% if user[2] == 'pegawai' %}selected{% endif %}>Pegawai</option>
+                </select>
+                <button type="submit">Simpan Perubahan</button>
+            </form>
+
+
+        <div>
+    </body>
+</html>

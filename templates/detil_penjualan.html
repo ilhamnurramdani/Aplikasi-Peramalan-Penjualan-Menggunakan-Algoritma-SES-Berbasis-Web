@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>SES Forecasting</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div>
+        <h1>Rincian Produk Terjual</h1>
+        <div class="container">
+            <div class="info"> 
+                <p>Bulan: <span>{{ info_penjualan[0] }}</span></p>
+                <p>Tahun: <span>{{ info_penjualan[1] }}</span></p>
+                <p>Total Terjual: <span>{{ info_penjualan[2] }}</span></p>
+                
+                <h2>Produk Terjual</h2>
+                <a href="/penjualan" >Kembali</a>
+            
+
+        <table border="1">
+            <tr>
+                <th>Nama Produk</th>
+                <th>Quantity</th>
+            </tr>
+            {% for produk in detail_produk %}
+            <tr>
+                <td>{{ produk[0] }}</td>
+                <td>{{ produk[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

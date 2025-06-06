@@ -1,0 +1,35 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>SES Forecasting</title>
+    </head>
+    <body>
+        <div>
+            {% include "navbar.html" %}
+            <h1>Manage Users</h1>
+            
+            <a href="{{ url_for('tambah_user') }}">Tambah User</a>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Aksi</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>
+                        <a href="/edit_user/{{user[0]}}">Edit</a> |
+                        <a href="/hapus_user/{{user[0]}}">Hapus</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        <div>
+    </body>
+</html>

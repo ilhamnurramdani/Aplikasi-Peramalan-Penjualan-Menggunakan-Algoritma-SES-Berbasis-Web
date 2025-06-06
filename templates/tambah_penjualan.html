@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Data Produk</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div>
+        <h1>Tambah Penjualan</h1>
+        <button class="kembali"><a href="/penjualan" >Kembali</a></button>
+        <form action="/tambah_penjualan" method="POST">
+            <label for="bulan">Bulan:</label>
+            <input type="text" name="bulan" placeholder="Contoh: Januari" required>
+            <label for="tahun">Tahun:</label>
+            <input type="text" name="tahun" placeholder="Contoh: 2024" required>
+            <div>
+                <label for="products">Produk dan Quantity:</label>
+                {% for produk in produks %}
+                    <input type="hidden" name="produk_quantity" value="{{produk[0]}}:0" id="hidden_{{produk[0]}}">
+                    <label for="name">{{produk[1]}}</label>
+                    <input type="text" name="quantity_{{produk[0]}}" min = "0" onchange="updateQuantity('{{produk[0]}}', this.value)" >
+                {% endfor %}
+                    <button type="submit">Simpan</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function updateQuantity(id_produk, quantity){
+            document.getElementById('hidden_' + id_produk).value = id_produk + ':' + quantity
+        }
+    </script>
+</body>
+</html>

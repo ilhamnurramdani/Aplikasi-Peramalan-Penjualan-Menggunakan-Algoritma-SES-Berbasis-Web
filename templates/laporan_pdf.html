@@ -1,0 +1,78 @@
+<html>
+<head>
+     <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laporan Peramalan Bulan {{ bulan }} Tahun {{ tahun }}</h1>
+
+    <h2>Peramalan Produk</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Produk</th>
+                <th>alpha</th>
+                <th>Bulan</th>
+                <th>Tahun</th>
+                <th>Peramalan</th>
+                <th>Error (%)</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in laporan_produk %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1]}}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Peramalan Penjualan</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Alpha</th>
+                <th>Bulan</th>
+                <th>Tahun</th>
+                <th>Peramalan</th>
+                <th>Error (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in laporan_penjualan %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

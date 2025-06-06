@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Hasil Peramalan</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div>
+        
+        <div class="container">
+            <div class="info">
+                <button class="kembali_peramalan_"><a href="/peramalan_produk" >Kembali</a></button>
+                <p>Menu: <span>{{ produk }}</span></p>
+                <p>Data Penjualan: <span>{{ penjualan }}</span></p>
+                <p>Peramalan: <span>{{ peramalan }}</span></p>
+                <p>MAPE (Error): <span>{{ mape }}%</span></p>
+            </div>
+
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ plot_url }}" alt="Grafik Peramalan">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

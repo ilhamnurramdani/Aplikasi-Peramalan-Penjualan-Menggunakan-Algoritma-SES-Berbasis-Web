@@ -1,0 +1,539 @@
+/* Reset margin dan padding pada body dan html */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #444;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #007bff;
+    /* Warna biru */
+    padding: 15px;
+    /* Padding di dalam navbar */
+    margin: 0;
+    /* Menghilangkan margin */
+    position: fixed;
+    /* Navbar tetap di atas */
+    top: 0;
+    /* Tempelkan di atas */
+    left: 0;
+    /* Tempelkan di kiri */
+    width: 100%;
+    /* Lebar penuh */
+    z-index: 1000;
+    /* Pastikan berada di atas elemen lain */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Tambahkan bayangan untuk tampilan menarik */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    /* Pusatkan item */
+}
+
+.navbar li {
+    margin: 0 15px;
+    /* Jarak antar item menu */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #009dff;
+}
+
+/* Dropdown container */
+.navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.navbar .dropbtn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 10px 20px;
+    /* Tambahkan padding untuk memperluas area hover */
+}
+
+/* Dropdown content (hidden by default) */
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #007bff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+    /* Sedikit jarak di bawah menu utama */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Dropdown content link styling */
+.navbar .dropdown-content li {
+    list-style: none;
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Hover styling */
+.navbar .dropdown-content a:hover {
+    background-color: #0056b3;
+}
+
+/* Show dropdown content on hover */
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Prevent sudden hiding by ensuring area coverage */
+.navbar .dropdown:hover,
+.navbar .dropdown-content:hover {
+    display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content,
+.navbar .dropdown-content:hover {
+    display: block;
+}
+
+
+.navbar .dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #0056b3;
+}
+
+/* Show dropdown content on hover */
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+div {
+    margin-top: 70px;
+}
+
+/* Gaya untuk notifikasi */
+.flash-message {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Gaya tombol silang */
+.flash-message .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+}
+
+.flash-message .close-btn:hover {
+    opacity: 0.7;
+}
+
+/* Form styles */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="file"],
+form input[type="number"],
+form input[type="text"],
+form input[type="password"],
+select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: center;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+
+}
+
+.tambah_produk {
+    margin-left: 200px;
+    background-color: #007BFF;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.tambah_produk a {
+    color: white;
+}
+
+.tambah_penjualan {
+    margin-left: 200px;
+    background-color: #007BFF;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.tambah_penjualan a {
+    color: white;
+}
+
+.kembali {
+    margin-left: 320px;
+    background-color: #007BFF;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.kembali a {
+    color: white;
+}
+
+
+
+.tambah_peramalan {
+    margin-left: 200px;
+    background-color: #007BFF;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.tambah_peramalan a {
+    color: white;
+}
+
+
+.kembali_peramalan {
+    margin-left: 320px;
+    background-color: #007BFF;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.kembali_peramalan a {
+    color: white;
+}
+
+.kembali_peramalan_ {
+    background-color: #007BFF;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.kembali_peramalan_ a {
+    color: white;
+}
+
+.print_peramalan_ {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.info {
+    margin-top: 0;
+    margin-left: 190px;
+}
+
+/* General Styles */
+
+
+/* Content Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Information Section */
+.info {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.info span {
+    font-weight: bold;
+    color: #0078d7;
+}
+
+/* Image Section */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media print {
+
+    
+    .navbar,
+    .kembali_peramalan_,
+    .print_peramalan_,
+    .footer,
+    .kembali {
+        display: none;
+    }
+
+   
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+   
+    .chart-container {
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.dashboard-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.quick-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.quick-links a:hover {
+    color: #0056b3;
+}
+
+.quick-links i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.logout {
+    margin-left: auto;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(46, 170, 243);
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.logout a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.logout:hover {
+    background-color: rgb(36, 150, 223);
+}

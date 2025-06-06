@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Hasil Peramalan</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div>
+    <div class="container">
+        <div class="info">
+            <h1>Hasil Peramalan</h1>
+            <button class="kembali_peramalan_"><a href="/peramalan_produk" >Kembali</a></button>
+            <button onclick="window.print()" class="print_peramalan_">Print</button>
+            <table>
+                <tr>
+                    <td>Periode</td>
+                    <td>Data Penjualan</td>
+                    <td>Data Peramalan</td>
+                    <td>errorr</td>
+                </tr>
+                {% for data in combine_data %}
+                    <tr>
+                        <td>{{data.bulan}}</td>
+                        <td>{{data.actual}}</td>
+                        <td>{{data.forecast}}</td>
+                        <td>{{data.mape}}%</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="2">Peramalan Selanjutnya</td>
+                    <td colspan="2">{{peramalan_selanjutnya}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Mape</td>
+                    <td colspan="2">{{mape}}%</td>
+                </tr>
+            </table>
+        </div>        
+        <div class="image-container">
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Grafik Peramalan">
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>SES Forecasting</title>
+    </head>
+    <body>
+        <div>
+            {% include "navbar.html" %}
+            <div class="dashboard-container">
+                <h1>Dashboard</h1>
+                <div class="cards">
+                    <div class="card">
+                        <h2>Total Produk</h2>
+                        <p>{{total_produk}}</p>
+                    </div>
+                    <div class="card">
+                        <h2>Total Penjualan</h2>
+                        <p>{{total_penjualan}}</p>
+                    </div>
+                </div>
+            
+                <div class="image-container">
+                    <img src="data:image/png;base64,{{ plot_url }}" alt="Grafik Peramalan">
+                </div>
+            
+            </div>
+            
+            
+        <div>
+            
+    </body>
+</html>

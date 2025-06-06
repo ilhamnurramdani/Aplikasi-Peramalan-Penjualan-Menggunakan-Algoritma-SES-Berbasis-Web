@@ -1,0 +1,26 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>SES Forecasting</title>
+    </head>
+    <body>
+        <div>
+            {% include "navbar.html" %}
+
+            <h1>Tambah User</h1>
+            
+            <form method="POST" action="/tambah_user">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <select name="hak_akses" required>
+                    <option value="admin">Admin</option>
+                    <option value="pegawai">Pegawai</option>
+                </select>
+                <button type="submit">Tambah</button>
+            </form>
+
+        <div>
+    </body>
+</html>

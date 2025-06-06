@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Peramalan</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div>
+        <h1>Peramalan</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <button class="kembali_peramalan"><a href="/peramalan_penjualan" >Kembali </a></button>
+        <form action="/hasil_peramalan_penjualan" method="POST">
+            <br>
+            <label for="alpha">Masukkan Alpha (0-1):</label>
+            <input type="number" name="alpha" step="0.1" min="0" max="1" value="0.6" required>
+            <br>
+            <button type="submit">peramalan</button>
+        </form>
+    </div>
+</body>
+</html>
